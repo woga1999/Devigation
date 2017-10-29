@@ -82,7 +82,7 @@ public class ReadyActivity extends AppCompatActivity {
         TextView totaltime = (TextView)findViewById(R.id.time);
         TextView startPointAddress = (TextView) findViewById(R.id.startPointAddress);
         TextView departmentAddress = (TextView) findViewById(R.id.departmentAddress);
-        startPointAddress.setText(textException.nowPlaceAdress(startLatitiude, startLongitude));
+        startPointAddress.setText("서울특별시 광진구 군자동 세종대학교 율곡관");
         departmentAddress.setText(destinationName);
 
         Button startNavigation = (Button) findViewById(R.id.startNavigation);
@@ -123,7 +123,7 @@ public class ReadyActivity extends AppCompatActivity {
         PathData pathData = new PathData(startPoint, endPoint);
 
 
-       TMapData tmapdata = new TMapData();
+        TMapData tmapdata = new TMapData();
 
         tmapview.setLocationPoint(startPoint.getLongitude(),startPoint.getLatitude());
         tmapview.setMapPosition(TMapView.POSITION_NAVI);
@@ -132,7 +132,7 @@ public class ReadyActivity extends AppCompatActivity {
         tmapview.setCompassMode(true);
 //        tmapview.setZoomLevel(11);
         totalDistance= pathData.getTotalDistance();
-       // totalDistance = (int)pointDistance(startLat, startLon, endLatitude, endLongitude);
+        // totalDistance = (int)pointDistance(startLat, startLon, endLatitude, endLongitude);
         totalTime = pathData.getTotalTime();
         setMapView(totalDistance);
         tmapview.setMapType(TMapView.MAPTYPE_STANDARD);
@@ -188,22 +188,22 @@ public class ReadyActivity extends AppCompatActivity {
 //        NetworkInfo wifi = manager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
         if (networkInfo != null) {
 
-                        if (networkInfo.getType() == ConnectivityManager.TYPE_WIFI && networkInfo.isConnectedOrConnecting()) {
-                               // wifi 연결중
-                            isConnected = true;
-                            } else if (networkInfo.getType() == ConnectivityManager.TYPE_MOBILE && networkInfo.isConnectedOrConnecting()) {
-                                // 모바일 네트워크 연결중
-                            isConnected = true;
-                           }
-                       else
-                        {
-                            isConnected = false;
-                                // 네트워크 오프라인 상태.
-                            }
-                    } else {
-                       // 네트워크 null.. 모뎀이 없는 경우??
+            if (networkInfo.getType() == ConnectivityManager.TYPE_WIFI && networkInfo.isConnectedOrConnecting()) {
+                // wifi 연결중
+                isConnected = true;
+            } else if (networkInfo.getType() == ConnectivityManager.TYPE_MOBILE && networkInfo.isConnectedOrConnecting()) {
+                // 모바일 네트워크 연결중
+                isConnected = true;
+            }
+            else
+            {
+                isConnected = false;
+                // 네트워크 오프라인 상태.
+            }
+        } else {
+            // 네트워크 null.. 모뎀이 없는 경우??
             isConnected = false;
-                   }
+        }
 
 
 //        }
