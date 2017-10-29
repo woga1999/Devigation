@@ -53,7 +53,7 @@ import java.util.Set;
 import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity {
-    //Main화면
+    //Main화면입니다.
 
 
     String[] names = {"","","","","","","","","","","","","","",""} ;
