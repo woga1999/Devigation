@@ -1,4 +1,4 @@
-package com.example.woga1.devigation;
+package com.example.woga1.navigation;
 
 import org.junit.Test;
 
