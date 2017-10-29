@@ -1,4 +1,4 @@
-package com.example.woga1.devigation;
+package com.example.woga1.navigation;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.woga1.devigation", appContext.getPackageName());
+        assertEquals("com.example.woga1.navigation", appContext.getPackageName());
     }
 }
